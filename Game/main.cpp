@@ -131,17 +131,17 @@ int main()
 				case sf::Keyboard::Return:
 					switch (menu.GetPressedItem())
 					{
-					case 0:
-						cout << "Play button has been pressed" << endl;
-						break;
+						case 0:
+							cout << "Play button has been pressed" << endl;
+							break;
 
-					case 1:
-						cout << "Option button has been pressed" << endl;
-						break;
+						case 1:
+							cout << "Option button has been pressed" << endl;
+							break;
 
-					case 2:
-						window.close();
-						break;
+						case 2:
+							window.close();
+							break;
 					}
 
 					break;

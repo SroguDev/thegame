@@ -12,21 +12,18 @@ Menu::Menu(float width, float height)
 		cout << "Couldn't load font" << endl;
 	}
 
-	menu[0].setFont(font);
-	menu[0].setColor(sf::Color::Red);
-	menu[0].setString("Play");
-	menu[0].setPosition(sf::Vector2f(width / 2, height / (MAX_NUMBER_OF_ITEMS + 1) * 0.5));
+	string str[] = { "Play", "Options", "Exit" };
 
-	menu[1].setFont(font);
-	menu[1].setColor(sf::Color::White);
-	menu[1].setString("Options");
-	menu[1].setPosition(sf::Vector2f(width / 2, height / (MAX_NUMBER_OF_ITEMS + 1) * 1));
-
-	menu[2].setFont(font);
-	menu[2].setColor(sf::Color::White);
-	menu[2].setString("Exit");
-	menu[2].setPosition(sf::Vector2f(width / 2, height / (MAX_NUMBER_OF_ITEMS + 1) * 1.5));
-
+	for (int i = 0; i < MAX_NUMBER_OF_ITEMS; i++) {
+		menu[i].setFont(font);
+		if (i == 0) 
+		menu[i].setColor(sf::Color(155, 193, 28));
+		else
+		menu[i].setColor(sf::Color(0, 173, 217));
+		menu[i].setString(str[i]);
+		menu[i].setPosition(sf::Vector2f(width / 2 - menu[i].getGlobalBounds().width / 2, height / (MAX_NUMBER_OF_ITEMS + 1) * (i+1)*0.5));
+	}
+	
 	selectedItemIndex = 0;
 
 }
@@ -47,9 +44,14 @@ void Menu::MoveUp()
 {
 	if (selectedItemIndex - 1 >= 0)
 	{
-		menu[selectedItemIndex].setColor(sf::Color::White);
+		menu[selectedItemIndex].setColor(sf::Color(0, 173, 217));
 		selectedItemIndex--;
-		menu[selectedItemIndex].setColor(sf::Color::Red);
+		menu[selectedItemIndex].setColor(sf::Color(155, 193, 28));
+	}
+	else {
+		selectedItemIndex = MAX_NUMBER_OF_ITEMS - 1;
+		menu[0].setColor(sf::Color(0, 173, 217));
+		menu[selectedItemIndex].setColor(sf::Color(155, 193, 28));
 	}
 }
 
@@ -57,8 +59,13 @@ void Menu::MoveDown()
 {
 	if (selectedItemIndex + 1 < MAX_NUMBER_OF_ITEMS)
 	{
-		menu[selectedItemIndex].setColor(sf::Color::White);
+		menu[selectedItemIndex].setColor(sf::Color(0, 173, 217));
 		selectedItemIndex++;
-		menu[selectedItemIndex].setColor(sf::Color::Red);
+		menu[selectedItemIndex].setColor(sf::Color(155, 193, 28));
+	}
+	else {
+		selectedItemIndex = 0;
+		menu[MAX_NUMBER_OF_ITEMS-1].setColor(sf::Color(0, 173, 217));
+		menu[selectedItemIndex].setColor(sf::Color(155, 193, 28));
 	}
 }
