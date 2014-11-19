@@ -53,6 +53,13 @@ int main()
 	window.setMouseCursorVisible(false); //Hide cursor
 	Menu menu(window.getSize().x, window.getSize().y);
 
+	sf::SoundBuffer buffer1;
+	if (!buffer1.loadFromFile("sounds/activated.wav"))
+		cout << "Couldn't load music 1";
+	sf::Sound sound1;
+	sound1.setBuffer(buffer1);
+	sound1.play();
+
 	sf::SoundBuffer buffer2;
 	if (!buffer2.loadFromFile("sounds/choose.wav"))
 		cout << "Couldn't load music 2";
