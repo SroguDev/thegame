@@ -1,6 +1,7 @@
 // NAG£ÓWKI KLAS
 
 #include "SFML/Graphics.hpp"
+#include "SFML/Audio.hpp"
 #include <iostream>
 
 #define MAX_NUMBER_OF_ITEMS 3
@@ -23,5 +24,7 @@ private:
 	int selectedItemIndex;
 	sf::Font font;
 	sf::Text menu[MAX_NUMBER_OF_ITEMS];
-
+	sf::Text title;
+	sf::SoundBuffer buffer;
+	sf::Sound sound;
 };

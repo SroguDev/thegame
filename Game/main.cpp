@@ -1,4 +1,5 @@
 #include "SFML/Graphics.hpp"
+#include "SFML/Audio.hpp"
 #include <iostream>
 #include "Menu.h"
 
@@ -48,9 +49,15 @@ bool isRectanglePressed(sf::RectangleShape &av_Sprite, sf::RenderWindow &av_Wind
 int main()
 {
 
-	sf::RenderWindow window(sf::VideoMode(800, 600), "SFML WORKS!");
-
+	sf::RenderWindow window(sf::VideoMode(800, 600), "Mystical Blade Commando");
+	window.setMouseCursorVisible(false); //Hide cursor
 	Menu menu(window.getSize().x, window.getSize().y);
+
+	sf::SoundBuffer buffer2;
+	if (!buffer2.loadFromFile("sounds/choose.wav"))
+		cout << "Couldn't load music 2";
+	sf::Sound sound2;
+	sound2.setBuffer(buffer2);
 
 	/*sf::Texture texture;
 	if (!texture.loadFromFile("Fat-Pig.png"))
@@ -95,7 +102,7 @@ int main()
 			{
 				window.close();
 			}
-
+			
 			/*
 			if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 			{
@@ -132,14 +139,17 @@ int main()
 					switch (menu.GetPressedItem())
 					{
 						case 0:
+							sound2.play();
 							cout << "Play button has been pressed" << endl;
 							break;
 
 						case 1:
+							sound2.play();
 							cout << "Option button has been pressed" << endl;
 							break;
 
 						case 2:
+							sound2.play();
 							window.close();
 							break;
 					}
