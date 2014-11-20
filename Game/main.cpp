@@ -1,7 +1,8 @@
 #include "SFML/Graphics.hpp"
 #include "SFML/Audio.hpp"
 #include <iostream>
-#include "Menu.h"
+#include "Menu/Menu.h"
+#include "Options/Options.h"
 
 using namespace std;
 
@@ -48,7 +49,6 @@ bool isRectanglePressed(sf::RectangleShape &av_Sprite, sf::RenderWindow &av_Wind
 
 int main()
 {
-
 	sf::RenderWindow window(sf::VideoMode(800, 600), "Mystical Blade Commando");
 	window.setMouseCursorVisible(false); //Hide cursor
 	Menu menu(window.getSize().x, window.getSize().y);
@@ -151,8 +151,12 @@ int main()
 							break;
 
 						case 1:
+						{
 							sound2.play();
 							cout << "Option button has been pressed" << endl;
+							//Options options(window.getSize().x, window.getSize().y);
+							//options.draw(window);
+						}
 							break;
 
 						case 2:
