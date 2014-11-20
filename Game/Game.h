@@ -2,6 +2,8 @@
 #include <Windows.h>
 #include <string>
 
+#define MAX_NUMBER_OF_ITEMS 3
+
 using namespace std;
 
 class Game
@@ -9,9 +11,9 @@ class Game
 public:
 	Game();
 	~Game();
-
-	void runGame();
-
+	
+	void runGame(int i);
+	
 protected:
 	enum GameState {MENU, GAME, GAME_OVER, END};
 	GameState state;

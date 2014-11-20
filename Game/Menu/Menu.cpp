@@ -1,5 +1,3 @@
-// CIA£A KLAS
-
 #include <iostream>
 #include "Menu.h"
 

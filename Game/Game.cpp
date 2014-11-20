@@ -1,6 +1,8 @@
 #include <iostream>
 #include "Game.h"
-#include "React/React.h"
+#include "Menu/Menu.h"
+
+sf::RenderWindow window(sf::VideoMode(800, 600), "Mystical Blade Commando");
 
 Game::Game()
 {
@@ -10,7 +12,7 @@ Game::Game()
 	{
 		cout << "Font not found ERROR" << endl;
 	}
-
+	//W³¹czenie menu
 	state = MENU;
 }
 
@@ -18,18 +20,21 @@ Game::~Game()
 {
 }
 
-void Game::runGame()
+
+void Game::runGame(int i)
 {
 	while (state != END)
 	{
 		switch (state)
 		{
 		case GameState::MENU:
-			menu();
+		{
+			//menu();
+		}
 			break;
 		
 		case GameState::GAME:
-			//
+			//Klasa gry
 			break;
 		}
 	}
@@ -39,9 +44,7 @@ void Game::runGame()
 
 void Game::menu()
 {
-	sf::RenderWindow window(sf::VideoMode(600, 600), "GAME");
-	React reactc;
-
+	
 	sf::Text title;
 	title.setString("Mystical Blade Commando");
 	title.setFont(font);
@@ -49,7 +52,7 @@ void Game::menu()
 	title.setStyle(sf::Text::Bold);
 	title.setColor(sf::Color(6, 77, 141));
 
-	title.setPosition(600 / 2 - title.getGlobalBounds().width / 2, 40);
+	title.setPosition(800 / 2 - title.getGlobalBounds().width / 2, 40);
 
 	const int ile = MAX_NUMBER_OF_ITEMS;
 	sf::Text tekst[ile];
@@ -60,7 +63,7 @@ void Game::menu()
 		tekst[i].setFont(font);
 		tekst[i].setCharacterSize(30);
 		tekst[i].setString(str[i]);
-		tekst[i].setPosition(600 / 2 - tekst[i].getGlobalBounds().width / 2, 200 + i * 60);	
+		tekst[i].setPosition(800 / 2 - tekst[i].getGlobalBounds().width / 2, 200 + i * 60);	
 		tekst[i].setColor(sf::Color(0, 173, 217));
 	}
 
@@ -78,11 +81,11 @@ void Game::menu()
 				switch (event.key.code)
 				{
 				case sf::Keyboard::Up:
-					reactc.MoveUp();
+					//reactc.MoveUp();
 					break;
 
 				case sf::Keyboard::Down:
-					reactc.MoveDown();
+					//reactc.MoveDown();
 					break;
 				}
 				break;

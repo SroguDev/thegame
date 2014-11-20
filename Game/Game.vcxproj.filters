@@ -19,15 +19,6 @@
     <Filter Include="Header Files\Menu">
       <UniqueIdentifier>{b2004bd3-4944-4c56-875d-ccc2ff4a2937}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Options">
-      <UniqueIdentifier>{13610b78-4757-4e2f-9caa-29c8eb143a6a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Game">
-      <UniqueIdentifier>{68e63d3d-c9d3-4d24-964e-d06a04ab46f2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Options">
-      <UniqueIdentifier>{7ab78cba-4176-442e-b045-627c3a3054fd}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -36,13 +27,7 @@
     <ClCompile Include="Menu\Menu.cpp">
       <Filter>Source Files\Menu</Filter>
     </ClCompile>
-    <ClCompile Include="Options\Options.cpp">
-      <Filter>Source Files\Options</Filter>
-    </ClCompile>
-    <ClCompile Include="main222.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Game\Game.cpp">
+    <ClCompile Include="Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -50,11 +35,8 @@
     <ClInclude Include="Menu\Menu.h">
       <Filter>Header Files\Menu</Filter>
     </ClInclude>
-    <ClInclude Include="Options\Options.h">
-      <Filter>Header Files\Options</Filter>
-    </ClInclude>
-    <ClInclude Include="Game\Game.h">
-      <Filter>Header Files\Game</Filter>
+    <ClInclude Include="Game.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
