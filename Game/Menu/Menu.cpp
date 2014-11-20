@@ -52,7 +52,7 @@ void Menu::draw(sf::RenderWindow &window)
 		window.draw(menu[i]);
 		window.draw(title);
 	}
-}
+}			
 
 void Menu::MoveUp()
 {

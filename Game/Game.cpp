@@ -2,8 +2,6 @@
 #include "Game.h"
 #include "Menu/Menu.h"
 
-sf::RenderWindow window(sf::VideoMode(800, 600), "Mystical Blade Commando");
-
 Game::Game()
 {
 	state = END;
@@ -21,7 +19,7 @@ Game::~Game()
 }
 
 
-void Game::runGame(int i)
+void Game::runGame()
 {
 	while (state != END)
 	{
@@ -29,9 +27,9 @@ void Game::runGame(int i)
 		{
 		case GameState::MENU:
 		{
-			//menu();
-		}
+			menu();
 			break;
+		}
 		
 		case GameState::GAME:
 			//Klasa gry
@@ -44,36 +42,36 @@ void Game::runGame(int i)
 
 void Game::menu()
 {
-	
-	sf::Text title;
-	title.setString("Mystical Blade Commando");
-	title.setFont(font);
-	title.setCharacterSize(40);
-	title.setStyle(sf::Text::Bold);
-	title.setColor(sf::Color(6, 77, 141));
+	sf::RenderWindow window(sf::VideoMode(800, 600), "Mystical Blade Commando");
+	window.setMouseCursorVisible(false); //Hide cursor
+	Menu menu(window.getSize().x, window.getSize().y);
 
-	title.setPosition(800 / 2 - title.getGlobalBounds().width / 2, 40);
+	sf::SoundBuffer buffer1;
+	if (!buffer1.loadFromFile("sounds/activated.wav"))
+		cout << "Couldn't load music 1";
+	sf::Sound sound1;
+	sound1.setBuffer(buffer1);
+	sound1.play();
 
-	const int ile = MAX_NUMBER_OF_ITEMS;
-	sf::Text tekst[ile];
+	sf::SoundBuffer buffer2;
+	if (!buffer2.loadFromFile("sounds/choose.wav"))
+		cout << "Couldn't load music 2";
+	sf::Sound sound2;
+	sound2.setBuffer(buffer2);
 
-	string str[] = { "Play", "Options", "Exit" };
-	for (int i = 0; i < ile; i++)
-	{
-		tekst[i].setFont(font);
-		tekst[i].setCharacterSize(30);
-		tekst[i].setString(str[i]);
-		tekst[i].setPosition(800 / 2 - tekst[i].getGlobalBounds().width / 2, 200 + i * 60);	
-		tekst[i].setColor(sf::Color(0, 173, 217));
-	}
 
-	while (state == MENU)
+	while (window.isOpen())
 	{
 		sf::Event event;
-
 		while (window.pollEvent(event))
 		{
+			if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape)
+			{
+				state = END;
+				window.close();
+			}
 
+		
 			switch (event.type)
 			{
 
@@ -81,34 +79,50 @@ void Game::menu()
 				switch (event.key.code)
 				{
 				case sf::Keyboard::Up:
-					//reactc.MoveUp();
+					menu.MoveUp();
 					break;
 
 				case sf::Keyboard::Down:
-					//reactc.MoveDown();
+					menu.MoveDown();
+					break;
+
+				case sf::Keyboard::Return:
+					switch (menu.GetPressedItem())
+					{
+					case 0:
+						sound2.play();
+						cout << "Play button has been pressed" << endl;
+						break;
+
+					case 1:
+					{
+						sound2.play();
+						cout << "Option button has been pressed" << endl;
+					}
+						break;
+
+					case 2:
+						sound2.play();
+						state = END;
+						window.close();
+						break;
+					}
+
 					break;
 				}
+
 				break;
 
 			case sf::Event::Closed:
 				state = END;
+				window.close();
 				break;
+
 			}
-
-			if (event.type == sf::Event::KeyReleased && event.key.code == sf::Keyboard::Escape)
-			{
-				state = END;
-			}
-
-			window.clear(sf::Color(243, 245, 242, 255));
-
-			window.draw(title);
-			for (int i = 0; i < ile; i++)
-			{
-				window.draw(tekst[i]);
-			}
-
-			window.display();
 		}
+
+		window.clear(sf::Color(243, 245, 242, 255));
+		menu.draw(window);
+		window.display();
 	}
 }

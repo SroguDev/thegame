@@ -12,7 +12,7 @@ public:
 	Game();
 	~Game();
 	
-	void runGame(int i);
+	void runGame();
 	
 protected:
 	enum GameState {MENU, GAME, GAME_OVER, END};

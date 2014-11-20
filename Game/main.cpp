@@ -4,7 +4,7 @@
 int main()
 {
 	Game game;
-	game.runGame(0);
+	game.runGame();
 
 	return EXIT_SUCCESS;
 }
