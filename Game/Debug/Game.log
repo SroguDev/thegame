@@ -1,15 +1,26 @@
-﻿Build started 2014-11-20 23:30:16.
-     1>Project "D:\Users\deemr\Documents\GitHub\thegame\Game\Game.vcxproj" on node 2 (Build target(s)).
+﻿Build started 2014-11-25 01:00:18.
+     1>Project "C:\Users\Marcin\Documents\VS\thegame\Game\Game.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"D:\Users\deemr\Documents\GitHub\thegame\/SFML-2.1/include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Menu\Menu.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\Marcin\Documents\VS\thegame\/SFML-2.1/include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Game.cpp Menu\Menu.cpp Options\Options.cpp main.cpp
+         Options.cpp
+     1>c:\users\marcin\documents\vs\thegame\game\options\options.cpp(27): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\marcin\documents\vs\thegame\game\options\options.cpp(89): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
          Menu.cpp
+     1>c:\users\marcin\documents\vs\thegame\game\menu\menu.cpp(30): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\marcin\documents\vs\thegame\game\menu\menu.cpp(96): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>c:\users\marcin\documents\vs\thegame\game\menu\menu.cpp(153): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
+         Generating Code...
+         Skipping... (no relevant changes detected)
+         main.cpp
+         Game.cpp
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Users\deemr\Documents\GitHub\thegame\Debug\Game.exe" /INCREMENTAL /NOLOGO /LIBPATH:"D:\Users\deemr\Documents\GitHub\thegame\/SFML-2.1/lib" "sfml-main-d.lib" "sfml-system-d.lib" "sfml-graphics-d.lib" "sfml-network-d.lib" "sfml-window-d.lib" "sfml-audio-d.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Users\deemr\Documents\GitHub\thegame\Debug\Game.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Users\deemr\Documents\GitHub\thegame\Debug\Game.lib" /MACHINE:X86 Debug\Game.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Marcin\Documents\VS\thegame\Debug\Game.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\Marcin\Documents\VS\thegame\/SFML-2.1/lib" "sfml-main-d.lib" "sfml-system-d.lib" "sfml-graphics-d.lib" "sfml-network-d.lib" "sfml-window-d.lib" "sfml-audio-d.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Marcin\Documents\VS\thegame\Debug\Game.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Marcin\Documents\VS\thegame\Debug\Game.lib" /MACHINE:X86 Debug\Game.obj
          Debug\main.obj
          Debug\Menu.obj
-         Game.vcxproj -> D:\Users\deemr\Documents\GitHub\thegame\Debug\Game.exe
-     1>Done Building Project "D:\Users\deemr\Documents\GitHub\thegame\Game\Game.vcxproj" (Build target(s)).
+         Debug\Options.obj
+         Game.vcxproj -> C:\Users\Marcin\Documents\VS\thegame\Debug\Game.exe
+     1>Done Building Project "C:\Users\Marcin\Documents\VS\thegame\Game\Game.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:02.46
+Time Elapsed 00:00:07.87

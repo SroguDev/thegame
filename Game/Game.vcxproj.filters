@@ -16,8 +16,8 @@
     <Filter Include="Source Files\Menu">
       <UniqueIdentifier>{96d43d9b-ed45-45df-8dd3-a987586aee24}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Menu">
-      <UniqueIdentifier>{b2004bd3-4944-4c56-875d-ccc2ff4a2937}</UniqueIdentifier>
+    <Filter Include="Source Files\Options">
+      <UniqueIdentifier>{d9df28f1-856b-42df-b7d2-b60335617ac3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -30,11 +30,11 @@
     <ClCompile Include="Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Options\Options.cpp">
+      <Filter>Source Files\Options</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Menu\Menu.h">
-      <Filter>Header Files\Menu</Filter>
-    </ClInclude>
     <ClInclude Include="Game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
